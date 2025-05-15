@@ -85,8 +85,8 @@ app.post('/create-checkout-session', async (req, res) => {
                 quantity: 1,
             }],
             mode: 'payment',
-            success_url: 'http://localhost:5000/access', // Redirection après paiement réussi
-            cancel_url: 'http://localhost:5000/home?payment=cancel' // Redirection après annulation
+           success_url: `${baseUrl}/access`,
+    cancel_url: `${baseUrl}/home?payment=cancel`
         });
 
         res.json({ id: stripeSession.id });
