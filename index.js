@@ -85,8 +85,8 @@ app.post('/create-checkout-session', async (req, res) => {
                 quantity: 1,
             }],
             mode: 'payment',
-           success_url: 'https://projetsoutenir.onrender.com/access', // Redirection après paiement réussi
-            cancel_url: 'https://projetsoutenir.onrender.com/home?payment=cancel' // Redirection après annulation
+          success_url: 'http://localhost:5000/access', // Redirection après paiement réussi
+            cancel_url: 'http://localhost:5000/home?payment=cancel' // Redirection après annulation
         });
 
         res.json({ id: stripeSession.id });
